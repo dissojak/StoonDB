@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png" width="128" alt="Database Icon">
+  <img src="assets/logo.png" width="128" alt="Database Icon">
 </p>
 
 <h1 align="center">StoonDB (ServerSQLPanel)</h1>
