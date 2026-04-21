@@ -5,7 +5,7 @@ ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT_DIR"
 
 VERSION="${1:-local}"
-APP_NAME="ServerSQLPanel"
+APP_NAME="StoonDB"
 APP_DIR="dist/${APP_NAME}.app"
 BIN_PATH=".build/release/${APP_NAME}"
 ZIP_PATH="dist/${APP_NAME}-macOS-${VERSION}.zip"
@@ -33,7 +33,7 @@ cat > "$APP_DIR/Contents/Info.plist" <<PLIST
     <key>CFBundleIconFile</key>
     <string>AppIcon.icns</string>
     <key>CFBundleIdentifier</key>
-    <string>local.serversql.panel</string>
+    <string>com.dissojak.stoondb</string>
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
     <key>CFBundleName</key>

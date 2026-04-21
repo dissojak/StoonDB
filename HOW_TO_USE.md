@@ -41,7 +41,7 @@ swift run
 
 ```bash
 ./scripts/build-release.sh
-open dist/ServerSQLPanel.app
+open dist/StoonDB.app
 ```
 
 ## 6. Troubleshooting

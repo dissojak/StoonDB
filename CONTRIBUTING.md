@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for contributing to ServerSQLPanel.
+Thanks for contributing to StoonDB.
 
 ## Development Setup
 

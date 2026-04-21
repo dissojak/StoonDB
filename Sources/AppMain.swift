@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct ServerSQLPanelApp: App {
+struct StoonDBApp: App {
     var body: some Scene {
         WindowGroup {
             ControlPanelView()

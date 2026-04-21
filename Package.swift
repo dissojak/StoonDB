@@ -2,19 +2,19 @@
 import PackageDescription
 
 let package = Package(
-    name: "ServerSQLPanel",
+    name: "StoonDB",
     platforms: [
         .macOS(.v13)
     ],
     products: [
         .executable(
-            name: "ServerSQLPanel",
-            targets: ["ServerSQLPanel"]
+            name: "StoonDB",
+            targets: ["StoonDB"]
         )
     ],
     targets: [
         .executableTarget(
-            name: "ServerSQLPanel",
+            name: "StoonDB",
             path: "Sources"
         )
     ]

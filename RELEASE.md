@@ -1,6 +1,6 @@
 # 🚀 Release & Installation Guide
 
-Welcome to the **ServerSQLPanel** release documentation! This guide explains how to build the application from source, generate a standard macOS App Bundle (`.app`), and publish new releases to GitHub.
+Welcome to the **StoonDB** release documentation! This guide explains how to build the application from source, generate a standard macOS App Bundle (`.app`), and publish new releases to GitHub.
 
 ---
 
@@ -28,8 +28,8 @@ chmod +x scripts/build-release.sh
 ```
 
 **This process will generate:**
-- 📦 `dist/ServerSQLPanel.app` (The native macOS app)
-- 🗜️ `dist/ServerSQLPanel-macOS-v1.0.1.zip` (The compressed archive for distribution)
+- 📦 `dist/StoonDB.app` (The native macOS app)
+- 🗜️ `dist/StoonDB-macOS-v1.0.1.zip` (The compressed archive for distribution)
 
 ---
 
@@ -37,14 +37,14 @@ chmod +x scripts/build-release.sh
 
 Share these instructions with anyone who wants to use your app:
 
-1. Download the latest `ServerSQLPanel-macOS-<version>.zip` from the **[Releases](https://github.com/dissojak/StoonDB/releases)** page.
+1. Download the latest `StoonDB-macOS-<version>.zip` from the **[Releases](https://github.com/dissojak/StoonDB/releases)** page.
 2. Extract the ZIP file.
-3. Drag and drop **ServerSQLPanel.app** into your `/Applications` folder.
+3. Drag and drop **StoonDB.app** into your `/Applications` folder.
 4. Double-click to open.
 
 > ⚠️ **macOS Security Prompt ("Unidentified Developer")**
 > Since this app is not signed through the Apple Developer Program:
-> 1. **Right-click** (or Control-click) `ServerSQLPanel.app` in your Applications folder.
+> 1. **Right-click** (or Control-click) `StoonDB.app` in your Applications folder.
 > 2. Select **Open** from the context menu.
 > 3. Click **Open** again on the security warning. You only need to do this once!
 

@@ -2,7 +2,7 @@
   <img src="assets/logo.png" width="128" alt="Database Icon">
 </p>
 
-<h1 align="center">StoonDB (ServerSQLPanel)</h1>
+<h1 align="center">StoonDB (StoonDB)</h1>
 
 <p align="center">
   <strong>A blazing-fast, native macOS control panel for your local database and phpMyAdmin.</strong>
@@ -29,8 +29,8 @@
 ### Download the App
 
 1. Go to the [Releases](https://github.com/dissojak/StoonDB/releases) page.
-2. Download the latest `ServerSQLPanel-macOS-vX.Y.Z.zip` archive.
-3. Unzip and drag **ServerSQLPanel.app** to your `/Applications` folder.
+2. Download the latest `StoonDB-macOS-vX.Y.Z.zip` archive.
+3. Unzip and drag **StoonDB.app** to your `/Applications` folder.
 
 > **Note:** Since the app is currently distributed outside the Mac App Store, right-click the app and select **"Open"** on the first launch to bypass macOS Gatekeeper.
 
@@ -55,7 +55,7 @@ You will find the compiled `.app` bundle inside the `dist/` directory.
 
 ## 📌 Usage
 
-Once installed, simply launch **ServerSQLPanel**. You will be presented with a modern, native window where you can:
+Once installed, simply launch **StoonDB**. You will be presented with a modern, native window where you can:
 
 1. **Start, Stop, or Restart** your local MySQL daemon with a single click.
 2. **Open phpMyAdmin** to instantly drop into your local database dashboard in your default browser.

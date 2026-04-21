@@ -25,7 +25,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ServerSQLPanel-macOS
+          name: StoonDB-macOS
           path: |
             dist/*.zip
             dist/*.dmg

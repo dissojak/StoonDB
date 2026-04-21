@@ -4,7 +4,7 @@ This file tracks release-readiness checks for distributable builds.
 
 ## Product
 
-- Name: ServerSQLPanel
+- Name: StoonDB
 - Platform: macOS 13+
 - App Type: Native SwiftUI control panel
 - Scope: Controls local MySQL service and opens local phpMyAdmin URL
@@ -13,7 +13,7 @@ This file tracks release-readiness checks for distributable builds.
 
 - [x] Builds in Debug mode (`swift build`)
 - [x] Builds in Release mode (`swift build -c release`)
-- [x] App bundle can be generated (`dist/ServerSQLPanel.app`)
+- [x] App bundle can be generated (`dist/StoonDB.app`)
 - [x] MySQL start/stop/restart commands execute via Homebrew services
 - [x] phpMyAdmin URL opens in default browser
 - [x] README includes install and run instructions
