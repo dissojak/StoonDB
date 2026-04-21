@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# SwiftPM build outputs
+.build/
+
+# Local release output
+dist/
+
+# Xcode user data
+*.xcworkspace
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
+DerivedData/
+
+# Logs
+*.log
