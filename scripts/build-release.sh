@@ -31,7 +31,7 @@ cat > "$APP_DIR/Contents/Info.plist" <<PLIST
     <key>CFBundleExecutable</key>
     <string>${APP_NAME}</string>
     <key>CFBundleIconFile</key>
-    <string>AppIcon</string>
+    <string>AppIcon.icns</string>
     <key>CFBundleIdentifier</key>
     <string>local.serversql.panel</string>
     <key>CFBundleInfoDictionaryVersion</key>
@@ -54,6 +54,10 @@ PLIST
 
 chmod +x "$APP_DIR/Contents/MacOS/${APP_NAME}"
 rm -f "$ZIP_PATH"
+
+# Touch the app directory to invalidate Finder's icon cache
+touch "$APP_DIR"
+
 /usr/bin/ditto -c -k --sequesterRsrc --keepParent "$APP_DIR" "$ZIP_PATH"
 
 echo "Release package created: $ZIP_PATH"
