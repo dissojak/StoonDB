@@ -18,6 +18,7 @@ jobs:
 
       - name: Build Release Artifact
         run: |
+          brew install create-dmg
           chmod +x scripts/build-release.sh
           ./scripts/build-release.sh "${GITHUB_REF_NAME:-manual}"
 
@@ -25,11 +26,15 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ServerSQLPanel-macOS
-          path: dist/*.zip
+          path: |
+            dist/*.zip
+            dist/*.dmg
 
       - name: Publish GitHub Release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/*.zip
+          files: |
+            dist/*.zip
+            dist/*.dmg
           generate_release_notes: true
