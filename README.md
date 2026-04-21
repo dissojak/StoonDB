@@ -2,7 +2,7 @@
   <img src="assets/logo.png" width="128" alt="Database Icon">
 </p>
 
-<h1 align="center">StoonDB (StoonDB)</h1>
+<h1 align="center">StoonDB</h1>
 
 <p align="center">
   <strong>A blazing-fast, native macOS control panel for your local database and phpMyAdmin.</strong>
