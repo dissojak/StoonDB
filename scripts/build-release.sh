@@ -72,20 +72,27 @@ DMG_PATH="dist/${APP_NAME}-macOS-${VERSION}.dmg"
 if command -v create-dmg &> /dev/null; then
     echo "Creating drag-and-drop macOS DMG Installer..."
     rm -f "$DMG_PATH"
+
+    INSTRUCTIONS_FILE="dist/Install StoonDB.txt"
+    cat > "$INSTRUCTIONS_FILE" <<EOF
+Drag ${APP_NAME}.app to the Applications folder, then open it from Applications.
+EOF
     
     # We use create-dmg to build the window with an applications symlink to mimic standard installers
     create-dmg \
       --volname "${APP_NAME} Installer" \
-      --volicon "assets/AppIcon.icns" \
       --window-pos 200 120 \
       --window-size 600 400 \
       --icon-size 130 \
             --text-size 14 \
       --icon "${APP_NAME}.app" 150 190 \
       --hide-extension "${APP_NAME}.app" \
+            --add-file "Install StoonDB.txt" "$INSTRUCTIONS_FILE" 300 340 \
       --app-drop-link 450 190 \
       "$DMG_PATH" \
       "$APP_DIR"
+
+        rm -f "$INSTRUCTIONS_FILE"
     
     echo "Successfully generated Installer -> $DMG_PATH"
 else
