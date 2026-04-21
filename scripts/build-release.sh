@@ -9,8 +9,13 @@ APP_NAME="StoonDB"
 APP_DIR="dist/${APP_NAME}.app"
 BIN_PATH=".build/release/${APP_NAME}"
 ZIP_PATH="dist/${APP_NAME}-macOS-${VERSION}.zip"
+LEGACY_APP_NAME="ServerSQLPanel"
 
 swift build -c release
+
+# Clean old legacy-named artifacts so releases stay consistently branded.
+rm -rf "dist/${LEGACY_APP_NAME}.app"
+rm -f "dist/${LEGACY_APP_NAME}"*.zip "dist/${LEGACY_APP_NAME}"*.dmg
 
 rm -rf "$APP_DIR"
 mkdir -p "$APP_DIR/Contents/MacOS" "$APP_DIR/Contents/Resources"
@@ -75,6 +80,7 @@ if command -v create-dmg &> /dev/null; then
       --window-pos 200 120 \
       --window-size 600 400 \
       --icon-size 130 \
+            --text-size 14 \
       --icon "${APP_NAME}.app" 150 190 \
       --hide-extension "${APP_NAME}.app" \
       --app-drop-link 450 190 \
