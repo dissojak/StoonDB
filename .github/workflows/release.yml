@@ -53,9 +53,18 @@ jobs:
               throw error;
             }
 
-            const legacyAssets = release.assets.filter((asset) =>
-              asset.name.startsWith('ServerSQLPanel-')
+            const assets = await github.paginate(github.rest.repos.listReleaseAssets, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: release.id,
+              per_page: 100
+            });
+
+            const legacyAssets = assets.filter((asset) =>
+              /^ServerSQLPanel-.*\.(dmg|zip)$/i.test(asset.name)
             );
+
+            core.info(`Found ${legacyAssets.length} legacy assets to delete.`);
 
             for (const asset of legacyAssets) {
               core.info(`Deleting legacy asset: ${asset.name}`);
