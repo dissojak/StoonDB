@@ -1,92 +1,78 @@
-# ServerSQLPanel
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png" width="128" alt="Database Icon">
+</p>
 
-A lightweight native macOS control panel for local MySQL and phpMyAdmin.
+<h1 align="center">StoonDB (ServerSQLPanel)</h1>
 
-## Status
+<p align="center">
+  <strong>A blazing-fast, native macOS control panel for your local database and phpMyAdmin.</strong>
+</p>
 
-- Native macOS app (SwiftUI)
-- Repository includes licensing, contribution docs, issue templates, CI, and release workflow
-- Release packaging script creates installable app ZIP artifacts
+<p align="center">
+  <a href="https://github.com/dissojak/StoonDB/releases/latest"><img alt="Release" src="https://img.shields.io/github/v/release/dissojak/StoonDB?style=for-the-badge"></a>
+  <a href="https://github.com/dissojak/StoonDB/actions/workflows/ci.yml"><img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/dissojak/StoonDB/ci.yml?style=for-the-badge"></a>
+  <a href="https://swift.org"><img alt="Swift" src="https://img.shields.io/badge/Swift-6.0-F05138.svg?style=for-the-badge&logo=swift"></a>
+  <a href="https://github.com/dissojak/StoonDB/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/dissojak/StoonDB?style=for-the-badge"></a>
+</p>
 
-## What It Does
+---
 
-- Start MySQL via Homebrew services
-- Stop MySQL via Homebrew services
-- Restart MySQL via Homebrew services
-- Open phpMyAdmin in the default browser
+## ✨ Features
 
-This app is a control layer only. It does not install MySQL, phpMyAdmin, Homebrew, or PHP.
+- **Blazing Fast:** Written purely in Swift & SwiftUI. No Electron, no web views, zero memory bloat.
+- **Auto-Login:** Bypasses tedious phpMyAdmin auth prompts, instantly logging you into your local Dev environment.
+- **Homebrew Native:** Effortlessly interfaces with `brew services` to manage your local MySQL background daemon safely.
+- **Zero Config:** Automatically detects standard paths and ports for MySQL (`3306`) and phpMyAdmin (`8080`).
 
-## Prerequisites
+## 🚀 Installation
 
-1. macOS 13 or newer
-2. Homebrew installed (app auto-detects common Homebrew paths)
-3. MySQL installed as Homebrew formula `mysql`
-4. phpMyAdmin served at `http://127.0.0.1:8080`
+### Download the App
 
-## Run Locally
+1. Go to the [Releases](https://github.com/dissojak/StoonDB/releases) page.
+2. Download the latest `ServerSQLPanel-macOS-vX.Y.Z.zip` archive.
+3. Unzip and drag **ServerSQLPanel.app** to your `/Applications` folder.
+
+> **Note:** Since the app is currently distributed outside the Mac App Store, right-click the app and select **"Open"** on the first launch to bypass macOS Gatekeeper.
+
+### Build from Source
+
+If you prefer to compile it yourself:
 
 ```bash
-cd /Users/stoon/Desktop/Projects/serverSQL
-swift run
+git clone https://github.com/dissojak/StoonDB.git
+cd StoonDB
+swift build -c release
+./scripts/build-release.sh
 ```
+You will find the compiled `.app` bundle inside the `dist/` directory.
 
-## Build Release Package
+## 🛠 Requirements
 
-```bash
-chmod +x scripts/build-release.sh
-./scripts/build-release.sh v1.0.0
-```
+- **macOS 13.0 (Ventura) or newer**
+- **Homebrew** installed
+- **MySQL** installed via `brew install mysql`
+- **phpMyAdmin** installed and configured via local PHP server on port `8080` (See [HOW_TO_USE.md](HOW_TO_USE.md) for full setup instructions)
 
-Generated files:
+## 📌 Usage
 
-- `dist/ServerSQLPanel.app`
-- `dist/ServerSQLPanel-macOS-v1.0.0.zip`
+Once installed, simply launch **ServerSQLPanel**. You will be presented with a modern, native window where you can:
 
-## Install from Release ZIP
+1. **Start, Stop, or Restart** your local MySQL daemon with a single click.
+2. **Open phpMyAdmin** to instantly drop into your local database dashboard in your default browser.
 
-1. Download `ServerSQLPanel-macOS-<version>.zip` from Releases.
-2. Unzip it.
-3. Move `ServerSQLPanel.app` into `/Applications`.
-4. Launch the app.
+For changing connection strings (e.g., connecting a Spring Boot or Node.js application), see our [Usage Guide](HOW_TO_USE.md). To set up a custom app icon for your own build, check out the [Release Documentation](RELEASE.md).
 
-If macOS blocks first launch:
+## 🤝 Contributing
 
-1. Right-click app and choose Open.
-2. Confirm Open.
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to set up your development environment, our coding standards, and how to submit a Pull Request.
 
-## Change phpMyAdmin URL
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Security Policy](SECURITY.md)
 
-Edit the default URL in `Sources/PhpMyAdminLauncher.swift`:
+## 📄 License & Legal
 
-```swift
-init(urlString: String = "http://127.0.0.1:8080")
-```
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
+Please refer to [CERTIFICATION.md](CERTIFICATION.md) and [COPYRIGHT](COPYRIGHT) for additional governance materials.
 
-## Troubleshooting
-
-- If MySQL actions fail, verify Homebrew service visibility:
-  - `brew services list`
-- If phpMyAdmin does not open, verify the local server is reachable:
-  - `open http://127.0.0.1:8080`
-- To confirm the phpMyAdmin endpoint is up, run:
-  - `curl -I http://127.0.0.1:8080/index.php`
-
-## Git and Project Standards
-
-- License: `LICENSE`
-- Copyright: `COPYRIGHT`
-- Certification checklist: `CERTIFICATION.md`
-- Usage guide: `HOW_TO_USE.md`
-- Contribution guide: `CONTRIBUTING.md`
-- Code of conduct: `CODE_OF_CONDUCT.md`
-- Security policy: `SECURITY.md`
-- Changelog: `CHANGELOG.md`
-- Release process: `RELEASE.md`
-
-## GitHub Automation
-
-- CI workflow: `.github/workflows/ci.yml`
-- Release workflow: `.github/workflows/release.yml`
-- Issue templates: `.github/ISSUE_TEMPLATE/`
-- PR template: `.github/pull_request_template.md`
+---
+<p align="center">Built with 🩵 for macOS</p>
