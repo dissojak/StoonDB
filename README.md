@@ -48,7 +48,7 @@ You will find the compiled `.app` bundle inside the `dist/` directory.
 
 ## 🛠 Requirements
 
-- **macOS 13.0 (Ventura) or newer**
+- **macOS 12.0 or newer**
 - **Homebrew** installed
 - **MySQL** installed via `brew install mysql`
 - **phpMyAdmin** installed and configured via local PHP server on port `8080` (See [HOW_TO_USE.md](HOW_TO_USE.md) for full setup instructions)

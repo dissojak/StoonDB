@@ -50,7 +50,7 @@ cat > "$APP_DIR/Contents/Info.plist" <<PLIST
     <key>CFBundleVersion</key>
     <string>1</string>
     <key>LSMinimumSystemVersion</key>
-    <string>13.0</string>
+    <string>12.0</string>
     <key>NSPrincipalClass</key>
     <string>NSApplication</string>
 </dict>
